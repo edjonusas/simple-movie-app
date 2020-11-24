@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Best Movies List</h1>
+    <div class="movies-block">
+      <movie-card
+        v-for="movie in movies"
+        @click="goMovie(movie.id)"
+        :key="movie.id"
+        :movie="movie"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import MovieCard from '@/components/MovieCard'
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld
-  }
-};
+    MovieCard,
+  },
+  computed: {
+    movies() {
+      return this.$store.getters.getMovies
+    },
+  },
+  methods: {
+    goMovie(id) {
+      this.$router.push(`/movie/${id}`)
+    },
+  },
+}
 </script>
+
+<style scoped>
+.movies-block {
+  margin: 0 auto;
+  max-width: 890px;
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>

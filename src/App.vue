@@ -1,10 +1,22 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view />
 </template>
+
+<script>
+// Movie gallery application
+// you are given movie list
+// first page of application should be movie gallery with movie cards
+// each cart should have: title, year, rating, comments length, and cover image
+// clicking on the card should redirect you to other page with information about particular movie
+// in movie information page this info is displayed: title, year, rating, description, image and comments
+// also in movie details page you should be able to add new comment and delete any comment
+// (remember to validate comment inputs, so user could not add empty text as comment)
+// also create modal to add new movie if needed
+// make sure to use these methods at least once:
+// class binding, style binding, v-for, v-if, at least one lifecycle hook
+// CREATIVE TASK:
+// think of some new cool feature in your application, so you could use "watch" method in it
+</script>
 
 <style>
 #app {
@@ -13,18 +25,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
