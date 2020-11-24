@@ -26,6 +26,7 @@ export default {
   },
   methods: {
     goMovie(id) {
+      this.$store.commit('setMovieSingle', id)
       this.$router.push(`/movie/${id}`)
     },
   },

@@ -89,11 +89,18 @@ export default createStore({
         ],
       },
     ],
+    movieSingle: null,
   },
   getters: {
     getMovies: state => state.movies,
+    getSingleMovie: state => state.movieSingle,
   },
-  mutations: {},
+  mutations: {
+    setMovieSingle(state, id) {
+      state.movieSingle = state.movies.filter(movie => movie.id === id)[0]
+      console.log(state.movieSingle)
+    },
+  },
   actions: {},
   modules: {},
 })

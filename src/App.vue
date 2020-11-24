@@ -4,11 +4,11 @@
 
 <script>
 // Movie gallery application
-// you are given movie list
-// first page of application should be movie gallery with movie cards
-// each cart should have: title, year, rating, comments length, and cover image
-// clicking on the card should redirect you to other page with information about particular movie
-// in movie information page this info is displayed: title, year, rating, description, image and comments
+//done you are given movie list
+//done first page of application should be movie gallery with movie cards
+//done each cart should have: title, year, rating, comments length, and cover image
+//done clicking on the card should redirect you to other page with information about particular movie
+//done in movie information page this info is displayed: title, year, rating, description, image and comments
 // also in movie details page you should be able to add new comment and delete any comment
 // (remember to validate comment inputs, so user could not add empty text as comment)
 // also create modal to add new movie if needed
