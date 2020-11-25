@@ -3,7 +3,7 @@
     <h1>Best Movies List</h1>
     <button @click="addMovieMenu">Add Your Movie</button>
     <div v-if="AddMenuVisible">
-      <div>Movie menu</div>
+      <add-movie-menu @close-menu="addMovieMenu" />
     </div>
     <div class="movies-block">
       <movie-card
@@ -17,11 +17,13 @@
 </template>
 
 <script>
+import AddMovieMenu from '@/components/AddMovieMenu'
 import MovieCard from '@/components/MovieCard'
 export default {
   name: 'Home',
   components: {
     MovieCard,
+    AddMovieMenu,
   },
   data() {
     return {
@@ -39,7 +41,6 @@ export default {
       this.$router.push(`/movie/${id}`)
     },
     addMovieMenu() {
-      console.log('works')
       this.AddMenuVisible = !this.AddMenuVisible
     },
   },
