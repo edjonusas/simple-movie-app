@@ -100,6 +100,21 @@ export default createStore({
       state.movieSingle = state.movies.filter(movie => movie.id === id)[0]
       console.log(state.movieSingle)
     },
+    sendComment(state, comment) {
+      state.movies.map(movie => {
+        if (movie.id === comment.movieId) {
+          movie.comments.push({ name: comment.name, comment: comment.comment })
+        }
+      })
+    },
+    deleteComment(state, data) {
+      console.log('delete')
+      state.movies.filter(movie => {
+        if (movie.id === data.movieId) {
+          movie.comments.splice(data.commentId, 1)
+        }
+      })
+    },
   },
   actions: {},
   modules: {},

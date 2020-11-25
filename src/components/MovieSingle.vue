@@ -12,7 +12,12 @@
       </div>
     </div>
     <div class="comments">
-      <movie-comments v-for="(comment, index) in movie.comments" :key="index" :comment="comment" />
+      <movie-comments
+        v-for="(comment, index) in movie.comments"
+        :key="index"
+        @delete-comment="deleteComment(index)"
+        :comment="comment"
+      />
     </div>
     <div><new-comment @comment="sendComment" /></div>
   </div>
@@ -29,6 +34,14 @@ export default {
   },
   props: {
     movie: Object,
+  },
+  methods: {
+    sendComment(comment) {
+      this.$store.commit('sendComment', comment)
+    },
+    deleteComment(id) {
+      this.$store.commit('deleteComment', { commentId: id, movieId: this.$route.params.id })
+    },
   },
 }
 </script>

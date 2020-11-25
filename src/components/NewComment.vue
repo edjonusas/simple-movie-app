@@ -1,8 +1,9 @@
 <template>
+  <div v-if="errorMessage">{{ errorMessage }}</div>
   <form @submit.prevent="sendComment" class="comment-form">
     <div class="inputs">
-      <input v-model="comment.name" type="text" placeholder="Name" />
-      <textarea v-model="comment.comment" required placeholder="Your Comment..."></textarea>
+      <input v-model="name" type="text" placeholder="Name" />
+      <textarea v-model="comment" placeholder="Your Comment..."></textarea>
     </div>
     <div>
       <button>Send Comment</button>
@@ -15,18 +16,25 @@ export default {
   name: 'NewComment',
   data() {
     return {
-      comment: {
-        name: '',
-        comment: '',
-      },
+      name: '',
+      comment: '',
+      errorMessage: '',
     }
   },
   methods: {
     sendComment() {
-      if (this.comment.name === '') {
-        this.comment.name = 'Anonymous'
+      if (this.name.length === 0) {
+        return (this.errorMessage = 'Enter your name')
       }
-      this.$emit('comment', this.comment)
+      if (this.comment.length < 10) {
+        return (this.errorMessage = 'Comment must be longer then 10 symbols')
+      }
+      this.$emit('comment', {
+        name: this.name,
+        comment: this.comment,
+        movieId: this.$route.params.id,
+      })
+      ;(this.name = ''), (this.comment = ''), (this.errorMessage = '')
     },
   },
 }
@@ -34,8 +42,8 @@ export default {
 
 <style scoped>
 .comment-form {
-  margin: 10px 0;
-  max-width: 900px;
+  margin: 10px auto;
+  max-width: 600px;
 }
 .comment-form .inputs {
   display: flex;

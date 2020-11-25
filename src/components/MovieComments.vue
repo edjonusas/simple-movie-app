@@ -5,7 +5,7 @@
       <p>{{ comment.comment }}</p>
     </div>
     <div class="button-block">
-      <button>Delete</button>
+      <button @click="deleteComment">Delete</button>
     </div>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   name: 'MovieComments',
   props: {
     comment: Object,
+  },
+  methods: {
+    deleteComment() {
+      this.$emit('delete-comment')
+    },
   },
 }
 </script>
