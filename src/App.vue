@@ -1,4 +1,5 @@
 <template>
+  <router-link to="/">Movie list</router-link>
   <router-view />
 </template>
 
@@ -10,7 +11,7 @@
 //done clicking on the card should redirect you to other page with information about particular movie
 //done in movie information page this info is displayed: title, year, rating, description, image and comments
 //done also in movie details page you should be able to add new comment and delete any comment
-// (remember to validate comment inputs, so user could not add empty text as comment)
+//done (remember to validate comment inputs, so user could not add empty text as comment)
 // also create modal to add new movie if needed
 // make sure to use these methods at least once:
 // class binding, style binding, v-for, v-if, at least one lifecycle hook

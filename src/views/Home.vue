@@ -1,6 +1,10 @@
 <template>
   <div class="home">
     <h1>Best Movies List</h1>
+    <button @click="addMovieMenu">Add Your Movie</button>
+    <div v-if="AddMenuVisible">
+      <div>Movie menu</div>
+    </div>
     <div class="movies-block">
       <movie-card
         v-for="movie in movies"
@@ -19,6 +23,11 @@ export default {
   components: {
     MovieCard,
   },
+  data() {
+    return {
+      AddMenuVisible: false,
+    }
+  },
   computed: {
     movies() {
       return this.$store.getters.getMovies
@@ -28,6 +37,10 @@ export default {
     goMovie(id) {
       this.$store.commit('setMovieSingle', id)
       this.$router.push(`/movie/${id}`)
+    },
+    addMovieMenu() {
+      console.log('works')
+      this.AddMenuVisible = !this.AddMenuVisible
     },
   },
 }
@@ -40,5 +53,9 @@ export default {
   gap: 30px;
   display: flex;
   flex-wrap: wrap;
+}
+button {
+  padding: 10px;
+  margin-bottom: 40px;
 }
 </style>

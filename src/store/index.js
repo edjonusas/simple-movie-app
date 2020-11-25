@@ -98,7 +98,6 @@ export default createStore({
   mutations: {
     setMovieSingle(state, id) {
       state.movieSingle = state.movies.filter(movie => movie.id === id)[0]
-      console.log(state.movieSingle)
     },
     sendComment(state, comment) {
       state.movies.map(movie => {
@@ -108,7 +107,6 @@ export default createStore({
       })
     },
     deleteComment(state, data) {
-      console.log('delete')
       state.movies.filter(movie => {
         if (movie.id === data.movieId) {
           movie.comments.splice(data.commentId, 1)
