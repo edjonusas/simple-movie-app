@@ -1,9 +1,11 @@
 <template>
   <div class="home">
-    <h1>Best Movies List</h1>
-    <button @click="addMovieMenu">Add Your Movie</button>
+    <div class="top-header">
+      <h1>Best Movies List</h1>
+      <button @click="addMovieMenu">Add Your Movie</button>
+    </div>
     <div v-if="AddMenuVisible">
-      <add-movie-menu @close-menu="addMovieMenu" />
+      <add-movie-menu @add-movie="addMovie" @close-menu="addMovieMenu" />
     </div>
     <div class="movies-block">
       <movie-card
@@ -43,11 +45,24 @@ export default {
     addMovieMenu() {
       this.AddMenuVisible = !this.AddMenuVisible
     },
+    addMovie(movie) {
+      this.$store.commit('addMovie', movie)
+    },
   },
 }
 </script>
 
 <style scoped>
+.top-header {
+  background-color: #e6e6e695;
+  padding: 10px 0 30px;
+  margin-bottom: 20px;
+}
+h1 {
+  color: #0c3f3b;
+  margin: 0;
+  margin-bottom: 20px;
+}
 .movies-block {
   margin: 0 auto;
   max-width: 890px;
@@ -56,7 +71,13 @@ export default {
   flex-wrap: wrap;
 }
 button {
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #157970;
+  border: #157970 2px solid;
+  background: none;
   padding: 10px;
-  margin-bottom: 40px;
+  outline: none;
 }
 </style>

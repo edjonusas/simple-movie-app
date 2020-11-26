@@ -113,6 +113,11 @@ export default createStore({
         }
       })
     },
+    addMovie(state, data) {
+      console.log(data)
+      state.movies.push(data)
+      console.log(state.movies)
+    },
   },
   actions: {},
   modules: {},

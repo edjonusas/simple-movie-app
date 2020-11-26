@@ -70,18 +70,44 @@ export default {
   display: flex;
   flex-direction: column;
 }
-input,
-textarea {
-  padding: 10px 40px;
-  margin-bottom: 20px;
+input {
+  background: none;
+  border-radius: 4px;
+  border: 2px solid #157970;
+  outline: none;
+  color: #0c3f3b;
+  font-size: 18px;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #157971b7;
 }
 
 textarea {
+  outline: none;
+  resize: none;
+  border-radius: 4px;
+  border: 2px solid #157970;
+  background: none;
+  font-size: 18px;
+  padding: 12px 10px;
   height: 100px;
 }
 
 button {
-  padding: 15px 40px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #157970;
+  border-radius: 4px;
+  border: 2px solid #157970;
+  width: 180px;
+  margin: 10px 10px;
+  padding: 12px 10px;
 }
 
 .error {

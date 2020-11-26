@@ -26,7 +26,8 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.img {
+
+img {
   object-fit: cover;
   width: 182px;
   height: 268px;

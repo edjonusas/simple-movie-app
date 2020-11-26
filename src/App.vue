@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/">Movie list</router-link>
+  <!-- <router-link to="/">Movie list</router-link> -->
   <router-view />
 </template>
 
@@ -20,11 +20,14 @@
 </script>
 
 <style>
+body {
+  background-image: url('../src/assets/img/bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
 #app {
+  /* filter: grayscale(90%); */
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 </style>

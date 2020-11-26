@@ -5,7 +5,7 @@
       <p>{{ comment.comment }}</p>
     </div>
     <div class="button-block">
-      <button @click="deleteComment">Delete</button>
+      <button @click="deleteComment">&#10006;</button>
     </div>
   </div>
 </template>
@@ -26,18 +26,26 @@ export default {
 
 <style scoped>
 .comments-block {
+  border: 2px solid #157970;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
 }
 .info-block {
   box-sizing: border-box;
   padding: 20px 40px;
-  margin: 10px 0;
-  background: #f8f8f8;
   width: 900px;
   text-align: left;
 }
 .button-block {
   width: 100px;
+}
+
+button {
+  color: #0c3f3b;
+  border: none;
+  background: none;
+  font-weight: 700;
+  font-size: 25px;
 }
 </style>

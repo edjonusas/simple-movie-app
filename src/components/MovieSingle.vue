@@ -63,4 +63,10 @@ export default {
 .movie-info span {
   margin: 0 10px;
 }
+
+img {
+  object-fit: cover;
+  width: 182px;
+  height: 268px;
+}
 </style>
